@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: funcionario_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  funcionariomanager.api:
+    image: funcionariomanager.api  # Substitua pelo nome da sua imagem
+    ports:
+      - "5200:8080"  # Mapeia a porta 8080 do contêiner para a porta 5200 do host
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Production"  # Ou "Development" conforme necessário
+    depends_on:
+      - db
+
+  gerenciamento-funcionario:
+    image: gerenciamento-funcionario  # Substitua pelo nome da sua imagem
+    ports:
+      - "3000:3000"
+    depends_on:
+      - funcionariomanager.api
+
+volumes:
+  pgdata:
