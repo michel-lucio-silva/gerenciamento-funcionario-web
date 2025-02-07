@@ -1,0 +1,43 @@
+nav {
+    background-color: #007bff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 0; 
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.logout button {
+    background: none; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 0.9em; 
+}
+
+.logout button:hover {
+    text-decoration: underline;
+}
+
+.sair {
+    width: 5%;
+}
