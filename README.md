@@ -41,3 +41,8 @@ REACT_APP_API_URL=http://localhost:5200/api
 4. **Inicie a aplicação**
 ```bash
 npm start
+
+## Docker Compose Completo
+adicionado no projeto uma pasta "docker-compose-completo", nela irá encontrar o arquivo configurado para subida
+das aplicações necessárias para o funcionamento do front 
+
