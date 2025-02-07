@@ -39,7 +39,7 @@ npm install
 3. **Configure a API**
 ```bash
 # .env
-REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_API_URL=http://localhost:5200/api
 
 4. **Inicie a aplicação**
 ```bash
