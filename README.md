@@ -29,7 +29,7 @@ Aplicação React para gestão de equipes integrada à API .NET Core.
 
 1. **Clone o projeto**
 ```bash
-git clone https://github.com/seu-usuario/gerenciamento-funcionarios.git
+https://github.com/michel-lucio-silva/gerenciamento-funcionario-web.git
 cd gerenciamento-funcionarios
 
 2. **Instale as dependências**
