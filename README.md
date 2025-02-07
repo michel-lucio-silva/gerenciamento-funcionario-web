@@ -4,9 +4,6 @@
 ```markdown
 # Gerenciamento de Funcionários
 
-<img src="https://img.shields.io/badge/React-18.2-61DAFB?logo=react" alt="React 18">
-<img src="https://img.shields.io/badge/React_Router-6.21-CC2927?logo=react-router" alt="React Router 6">
-
 Aplicação React para gestão de equipes integrada à API .NET Core.
 
 ## ✨ Funcionalidades
