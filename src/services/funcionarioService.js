@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL + '/Funcionario'; // Pega a URL base do .env
+const API_URL = process.env.REACT_APP_API_URL + '/Funcionario'; 
 
 const getFuncionarios = async () => {
     const response = await axios.get(API_URL, {

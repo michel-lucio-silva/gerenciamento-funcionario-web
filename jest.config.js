@@ -4,10 +4,10 @@ module.exports = {
         '^.+\\.(js|jsx)$': 'babel-jest',
     },
     transformIgnorePatterns: [
-        '/node_modules/(?!axios)' // Permite que o axios seja transformado
+        '/node_modules/(?!axios)' 
     ],
     setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
     moduleNameMapper: {
-        '\\.(css|less|scss)$': 'identity-obj-proxy', // Ignora arquivos CSS
+        '\\.(css|less|scss)$': 'identity-obj-proxy',
     },
 };

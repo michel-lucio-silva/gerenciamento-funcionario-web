@@ -4,7 +4,6 @@ import { MemoryRouter } from 'react-router-dom';
 import ListaFuncionarios from '../components/ListaFuncionarios';
 import funcionarioService from '../services/funcionarioService';
 
-// Mock do serviço de funcionários
 jest.mock('../services/funcionarioService', () => ({
   getFuncionarios: jest.fn(),
   deleteFuncionario: jest.fn(),
@@ -13,7 +12,6 @@ jest.mock('../services/funcionarioService', () => ({
 
 describe('ListaFuncionarios', () => {
   beforeEach(() => {
-    // Mockando a resposta do serviço de funcionários
     funcionarioService.getFuncionarios.mockResolvedValue([
       {
         id: 1,
@@ -35,14 +33,13 @@ describe('ListaFuncionarios', () => {
       },
     ]);
 
-    // Mockando a resposta do serviço de gestor
     funcionarioService.getFuncionario.mockImplementation((nomeGestor) => {
       if (nomeGestor === 'Gestor 1') {
         return Promise.resolve({ nome: 'Gestor', sobrenome: 'Um' });
       } else if (nomeGestor === 'Gestor 2') {
         return Promise.resolve({ nome: 'Gestor', sobrenome: 'Dois' });
       }
-      return Promise.resolve(null); // Para outros casos
+      return Promise.resolve(null);
     });
   });
 
@@ -53,10 +50,8 @@ describe('ListaFuncionarios', () => {
       </MemoryRouter>
     );
 
-    // Verifica se o título está presente
     expect(screen.getByText('Lista de Funcionários')).toBeInTheDocument();
 
-    // Aguarda a renderização da lista de funcionários
     await waitFor(() => {
       expect(screen.getByText('Funcionário 1 Sobrenome 1')).toBeInTheDocument();
       expect(screen.getByText('Funcionário 2 Sobrenome 2')).toBeInTheDocument();

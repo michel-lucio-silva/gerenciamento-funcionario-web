@@ -4,7 +4,6 @@ import App from './App';
 import authService from '../src/services/authService';
 import funcionarioService from '../src/services/funcionarioService';
 
-// Mock dos componentes
 jest.mock('./components/Menu', () => () => <div>Menu</div>);
 jest.mock('./components/ListaFuncionarios', () => () => (
   <div>
@@ -27,15 +26,13 @@ jest.mock('./components/ListaFuncionarios', () => () => (
   </div>
 ));
 jest.mock('./components/AdicionarFuncionario', () => () => <div>AdicionarFuncionario</div>);
-jest.mock('./components/EditarFuncionario', () => () => <div>EditarFuncionario</div>); // Mock do EditarFuncionario
+jest.mock('./components/EditarFuncionario', () => () => <div>EditarFuncionario</div>); 
 
-// Mock do serviço de autenticação
 jest.mock('../src/services/authService', () => ({
-  login: jest.fn(() => Promise.resolve()), // Simula um login bem-sucedido
-  isAuthenticated: jest.fn(() => true), // Simula que o usuário está autenticado
+  login: jest.fn(() => Promise.resolve()), 
+  isAuthenticated: jest.fn(() => true), 
 }));
 
-// Mock do serviço de funcionários
 jest.mock('../src/services/funcionarioService', () => ({
   getFuncionarios: jest.fn(() => Promise.resolve([{ 
     id: 1, 
@@ -45,17 +42,15 @@ jest.mock('../src/services/funcionarioService', () => ({
     email: 'funcionario1@example.com', 
     numeroDocumento: '123456789', 
     nomeGestor: 1 
-  }])), // Simula a obtenção de funcionários
+  }])),
 }));
 
 describe('App', () => {
   it('renderiza sem erros e exibe os componentes corretos', async () => {
-    // Simula o login
     await authService.login('test@example.com', 'password');
 
-    render(<App />); // Renderiza o App diretamente
+    render(<App />);
 
-    // Verifica se o Menu está sendo renderizado
     expect(screen.getByText('Menu')).toBeInTheDocument();
 
   });
